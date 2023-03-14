@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: todoList
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/notes
+    driver-class-name: org.postgresql.Driver
+    username: inexa
+    password: 'P@ssword'
+    schema-generate: CREATE_UPDATE
+    db-type: postgres
+    dialect: POSTGRES
+netty:
+  default:
+    allocator:
+      max-order: 3
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
