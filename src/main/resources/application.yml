@@ -1,6 +1,8 @@
 micronaut:
   application:
     name: todoList
+  server:
+    port: 9000
   router:
     static-resources:
       swagger:
@@ -18,6 +20,8 @@ datasources:
     schema-generate: CREATE_UPDATE
     db-type: postgres
     dialect: POSTGRES
+    minPoolSize: 2
+    maxPoolSize: 5
 netty:
   default:
     allocator:

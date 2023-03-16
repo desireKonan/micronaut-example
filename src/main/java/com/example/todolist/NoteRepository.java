@@ -1,4 +1,4 @@
-package com.todolist;
+package com.example.todolist;
 
 import io.micronaut.data.annotation.Repository;
 import io.micronaut.data.repository.CrudRepository;

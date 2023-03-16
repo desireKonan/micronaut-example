@@ -1,4 +1,4 @@
-package com.todolist;
+package com.example.todolist;
 
 
 import lombok.Getter;

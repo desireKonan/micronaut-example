@@ -1,4 +1,4 @@
-package com.todolist;
+package com.example.todolist;
 
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
@@ -11,7 +11,7 @@ import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.annotation.Delete;
 import java.util.List;
 
-@Controller(value = "/api/v1/")
+@Controller(value = "api/v1/notes")
 public class TodoListController {
     private final TodoListService todoListService;
 

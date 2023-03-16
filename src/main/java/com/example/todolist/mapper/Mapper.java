@@ -1,4 +1,4 @@
-package com.todolist.mapper;
+package com.example.todolist.mapper;
 
 public interface Mapper<I, O> {
     void mapTo(I input, O output);

@@ -1,5 +1,6 @@
 package com.todolist;
 
+import com.example.todolist.Note;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.client.HttpClient;

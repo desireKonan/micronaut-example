@@ -1,7 +1,7 @@
-package com.todolist;
+package com.example.todolist;
 
 
-import com.todolist.mapper.NoteMapper;
+import com.example.todolist.mapper.NoteMapper;
 import jakarta.inject.Singleton;
 import java.util.Date;
 import java.util.List;

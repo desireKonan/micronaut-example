@@ -1,4 +1,4 @@
-package com.todolist;
+package com.example;
 
 import io.micronaut.runtime.Micronaut;
 import io.swagger.v3.oas.annotations.*;
@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.info.*;
 @OpenAPIDefinition(
     info = @Info(
             title = "todoList",
-            version = "0.0"
+            version = "1.0"
     )
 )
 public class Application {
