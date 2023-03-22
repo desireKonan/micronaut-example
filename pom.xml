@@ -14,7 +14,7 @@
   </parent>
 
   <properties>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
     <micronaut.version>3.8.6</micronaut.version>
