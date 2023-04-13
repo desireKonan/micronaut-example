@@ -1,7 +1,6 @@
 package com.example.todolist;
 
-
-import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.core.annotation.Introspected;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,10 +12,10 @@ import java.util.Date;
 
 @Getter
 @Setter
+@Introspected
 @NoArgsConstructor
-//@Entity
 @Table(name = "note")
-@MappedEntity
+@Entity
 public class NoteEntity {
 
     @Id

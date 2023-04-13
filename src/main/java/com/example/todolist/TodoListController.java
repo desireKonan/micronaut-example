@@ -19,23 +19,23 @@ public class TodoListController {
         this.todoListService = todoListService;
     }
 
-    @Get(uri = "notes")
+    @Get
     public HttpResponse<List<Note>> getNotes() {
         return HttpResponse.ok(this.todoListService.getListNotes());
     }
 
-    @Post("note")
+    @Post
     public Note saveNote(@Body Note note) {
         return this.todoListService.saveNote(note);
     }
 
-    @Put("note/{id}")
+    @Put("{id}")
     public Note updateNode(@Body Note note, @PathVariable Long id) throws Exception {
         return this.todoListService.updateNote(note, id);
     }
 
 
-    @Get("note/{id}")
+    @Get("{id}")
     public HttpResponse<Note> getNote(@PathVariable Long id) {
         try {
             Note note = this.todoListService.getNote(id);
@@ -45,7 +45,7 @@ public class TodoListController {
         }
     }
 
-    @Delete("note/{id}")
+    @Delete("{id}")
     public void deleteNote(@PathVariable Long id) {
         this.todoListService.deleteNote(id);
     }

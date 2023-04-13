@@ -51,26 +51,23 @@ class TodoListTest {
 
     @Test
     void testAddNewNote() {
-        Note note = new Note();
-        note.setContent("Notes supplémentaires !");
-        Note noteSaved = httpClient.toBlocking().retrieve(HttpRequest.POST("note", note), Note.class);
+        Note note = new Note(0L, "Notes supplémentaires !");
+        Note noteSaved = httpClient.toBlocking().retrieve(HttpRequest.POST("notes", note), Note.class);
         Assertions.assertEquals(note.getContent(), noteSaved.getContent());
     }
 
 
     @Test
     void testUpdateValidNote() throws Exception {
-        Note note = new Note();
-        note.setId(1L);
-        note.setContent("New content part 4");
-        Note noteSaved = httpClient.toBlocking().retrieve(HttpRequest.PUT("note/" + note.getId(), note), Note.class);
+        Note note = new Note(4L, "New content part 4");
+        Note noteSaved = httpClient.toBlocking().retrieve(HttpRequest.PUT("notes/" + note.getId(), note), Note.class);
         Assertions.assertEquals(note.getContent(), noteSaved.getContent());
     }
 
 
     @Test
     void deleteNoteFromId() {
-        HttpResponse<Note> httpResponse = httpClient.toBlocking().exchange(HttpRequest.DELETE("note/" + 1L, Note.class));
+        HttpResponse<Note> httpResponse = httpClient.toBlocking().exchange(HttpRequest.DELETE("notes/" + 1L, Note.class));
         Assertions.assertEquals(200, httpResponse.code());
         Assertions.assertEquals(null, httpResponse.body());
     }
@@ -78,7 +75,7 @@ class TodoListTest {
 
     @Test
     void getNoteFromId() {
-        HttpResponse<Note> httpResponse = httpClient.toBlocking().exchange(HttpRequest.GET("note/" + 2L), Note.class);
+        HttpResponse<Note> httpResponse = httpClient.toBlocking().exchange(HttpRequest.GET("notes/" + 4L), Note.class);
         Assertions.assertEquals((httpResponse.body() != null), true);
     }
 
@@ -86,7 +83,7 @@ class TodoListTest {
     @Test
     void getNoteFromInexistantId() {
         HttpClientResponseException ex = Assertions.assertThrows(HttpClientResponseException.class, () ->
-            httpClient.toBlocking().exchange(HttpRequest.GET("note/" + 3L), Note.class)
+            httpClient.toBlocking().exchange(HttpRequest.GET("notes/" + 0L), Note.class)
         );
 
         Assertions.assertEquals(404, ex.getStatus().getCode());

@@ -16,9 +16,6 @@ public class NoteMapper implements Mapper<Note, NoteEntity> {
 
     @Override
     public Note transformInto(NoteEntity ouptut) {
-        Note inputNote = new Note();
-        inputNote.setId(ouptut.getId());
-        inputNote.setContent(ouptut.getContent());
-        return inputNote;
+        return new Note(ouptut.getId(), ouptut.getContent());
     }
 }
