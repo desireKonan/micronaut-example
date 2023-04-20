@@ -1,0 +1,18 @@
+type Query {
+    hello(name: String): String!
+}
+
+scalar UUID
+
+type Book {
+    id: UUID,
+    name: String,
+    description: String,
+    author: Author
+}
+
+type Author {
+   id: UUID,
+    firstName: String,
+    lastName: String
+}
