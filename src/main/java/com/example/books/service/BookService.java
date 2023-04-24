@@ -8,9 +8,9 @@ import java.util.UUID;
 
 public interface BookService {
 
-    List<Book> getAll();
+    List<Book> getAllBooks();
 
-    Optional<Book> getById(UUID id);
+    Optional<Book> getByBookId(UUID id);
 
-    void create(Book book);
+    Book createBook(Book book);
 }

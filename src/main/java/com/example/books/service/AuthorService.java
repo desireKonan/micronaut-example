@@ -7,9 +7,9 @@ import java.util.UUID;
 
 public interface AuthorService {
 
-    List<Author> getAll();
+    List<Author> getAllAuthors();
 
-    Optional<Author> getById(UUID id);
+    Optional<Author> getByAuthorId(UUID id);
 
-    void create(Author author);
+    Author createAuthor(Author author);
 }

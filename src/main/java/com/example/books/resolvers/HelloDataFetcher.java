@@ -1,4 +1,4 @@
-package com.example.books.datafetcher;
+package com.example.books.resolvers;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;

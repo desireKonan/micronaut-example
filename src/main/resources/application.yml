@@ -16,8 +16,8 @@ datasources:
   default:
     url: jdbc:postgresql://localhost:5432/notes
     driver-class-name: org.postgresql.Driver
-    username: inexa
-    password: 'P@ssword'
+    username: postgres
+    password: 'Desire01'
     schema-generate: CREATE_UPDATE
     db-type: postgres
     dialect: POSTGRES

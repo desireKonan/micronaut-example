@@ -1,14 +1,19 @@
 package com.example.books.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.time.Instant;
+import java.util.Date;
 import java.util.UUID;
 
-@Getter
-@Setter
-@Entity
+
+@Entity(name = "Livre")
 @Table(name = "livre")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book extends BaseEntity {
     @Id
     @GeneratedValue
@@ -21,6 +26,38 @@ public class Book extends BaseEntity {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "auteur_id")
+    @JoinColumn(name = "author_id")
     private Author author;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 }
