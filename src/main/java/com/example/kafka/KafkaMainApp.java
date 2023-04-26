@@ -8,5 +8,6 @@ public class KafkaMainApp {
         ApplicationContext applicationContext = ApplicationContext.run();
         ProductClient client = applicationContext.getBean(ProductClient.class);
         client.sendProduct("Nike", "Blue trainers");
+        client.sendProduct("Product", "Apache client");
     }
 }

@@ -23,10 +23,12 @@ datasources:
     dialect: POSTGRES
     minPoolSize: 2
     maxPoolSize: 5
+
 netty:
   default:
     allocator:
       max-order: 3
+
 jpa:
   default:
     properties:
