@@ -14,7 +14,17 @@ micronaut:
 
 datasources:
   default:
-    url: jdbc:postgresql://localhost:5432/notes
+    url: jdbc:postgresql://localhost:5433/Notes
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 'Desire01'
+    schema-generate: CREATE_UPDATE
+    db-type: postgres
+    dialect: POSTGRES
+    minPoolSize: 2
+    maxPoolSize: 5
+  user:
+    url: jdbc:postgresql://localhost:5433/User
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: 'Desire01'
@@ -36,13 +46,19 @@ jpa:
         hbm2ddl:
           auto: update
 
+flyway:
+  baseline-on-migrate: false
+  datasources:
+    user:
+      enabled: true
+
 graphql:
   enabled: true
   graphiql: # enables the /graphiql endpoint to test calls against your graph.
     enabled: true
 
-kafka:
-  bootstrap:
-    servers: localhost:9092
+#kafka:
+  #bootstrap:
+    #servers: localhost:9092
 
 
